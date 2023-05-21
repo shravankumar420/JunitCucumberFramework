@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="24.889" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="Search and place the order for products" name="Search Experiance for product search in both home and offer page" time="9.143">
+<system-out><![CDATA[
+Given user is on Greencard landing page.....................................passed
+When user search with shortname "Tomato" and extracted actual name of the...passed
+Then user search for "Tomato" shortname in offer page to check if products exist "search".passed
+]]></system-out>
+</testcase>
+<testcase classname="Search and place the order for products" name="Search Experiance with examples - Example #1.1" time="7.862">
+<system-out><![CDATA[
+Given user is on Greencard landing page.....................................passed
+When user search with shortname Strawberry and extracted actual name of the exp.passed
+Then user search for Strawberry shortname in offer page to check if products exist "search" exp.passed
+]]></system-out>
+</testcase>
+<testcase classname="Search and place the order for products" name="Search Experiance with examples - Example #1.2" time="7.628">
+<system-out><![CDATA[
+Given user is on Greencard landing page.....................................passed
+When user search with shortname Potato and extracted actual name of the exp.passed
+Then user search for Potato shortname in offer page to check if products exist "search" exp.passed
+]]></system-out>
+</testcase>
+</testsuite>

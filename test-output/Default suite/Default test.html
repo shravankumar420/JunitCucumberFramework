@@ -1,0 +1,349 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun May 21 06:54:31 IST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>20 seconds (20462 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='CucumberOptions.TestNgRunner.tearDownClass()'><b>tearDownClass</b><br>Test class: CucumberOptions.TestNgRunner</td>
+<td><div><pre>java.lang.RuntimeException: java.io.IOException: HTTP request failed:
+&gt; GET https://messages.cucumber.io/api/reports
+&lt; HTTP/1.1 401 Unauthorized
+&lt; X-Cache: Error from cloudfront
+&lt; x-amz-apigw-id: FP7j8Hv8iGYF3GQ=
+&lt; Access-Control-Allow-Origin: https://reports.cucumber.io
+&lt; Access-Control-Allow-Methods: GET
+&lt; X-Amz-Cf-Pop: HYD57-P1
+&lt; Connection: keep-alive
+&lt; Date: Sun, 21 May 2023 01:24:53 GMT
+&lt; Access-Control-Allow-Headers: Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token
+&lt; X-Amzn-Trace-Id: Root=1-646972e5-09dd74ee10d3d1c953132fb0;Sampled=0;lineage=d7df4ace:0
+&lt; Via: 1.1 dea34d605fc32d028ad65cb7773b26be.cloudfront.net (CloudFront)
+&lt; Cache-Control: private, no-cache, no-store, must-revalidate
+&lt; Access-Control-Allow-Credentials: true
+&lt; x-amzn-RequestId: e1b7c688-b767-4d9b-8432-f7e7fa1e2824
+&lt; X-Amz-Cf-Id: axoxa9hRmb1EJTylQkMO2lMc_tEosOP_eRIMghU1uLU-pEyMpnAX-w==
+&lt; Content-Length: 627
+&lt; Content-Type: text/plain; charset=UTF-8
+[31m[1m┌──────────────────────────────────────────────────────────────┐[0m
+[31m[1m│[0m Invalid CUCUMBER_PUBLISH_TOKEN: [1msome-secret-token[0m            [31m[1m│[0m
+[31m[1m│[0m Go to [1m[36m[4mhttps://reports.cucumber.io/profile[0m to get your token. [31m[1m│[0m
+[31m[1m└──────────────────────────────────────────────────────────────┘[0m
+	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:32)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:125)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:222)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.io.IOException: HTTP request failed:
+&gt; GET https://messages.cucumber.io/api/reports
+&lt; HTTP/1.1 401 Unauthorized
+&lt; X-Cache: Error from cloudfront
+&lt; x-amz-apigw-id: FP7j8Hv8iGYF3GQ=
+&lt; Access-Control-Allow-Origin: https://reports.cucumber.io
+&lt; Access-Control-Allow-Methods: GET
+&lt; X-Amz-Cf-Pop: HYD57-P1
+&lt; Connection: keep-alive
+&lt; Date: Sun, 21 May 2023 01:24:53 GMT
+&lt; Access-Control-Allow-Headers: Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token
+&lt; X-Amzn-Trace-Id: Root=1-646972e5-09dd74ee10d3d1c953132fb0;Sampled=0;lineage=d7df4ace:0
+&lt; Via: 1.1 dea34d605fc32d028ad65cb7773b26be.cloudfront.net (CloudFront)
+&lt; Cache-Control: private, no-cache, no-store, must-revalidate
+&lt; Access-Control-Allow-Credentials: true
+&lt; x-amzn-RequestId: e1b7c688-b767-4d9b-8432-f7e7fa1e2824
+&lt; X-Amz-Cf-Id: axoxa9hRmb1EJTylQkMO2lMc_tEosOP_eRIMghU1uLU-pEyMpnAX-w==
+&lt; Content-Length: 627
+&lt; Content-Type: text/plain; charset=UTF-8
+[31m[1m┌──────────────────────────────────────────────────────────────┐[0m
+[31m[1m│[0m Invalid CUCUMBER_PUBLISH_TOKEN: [1msome-secret-token[0m            [31m[1m│[0m
+[31m[1m│[0m Go to [1m[36m[4mhttps://reports.cucumber.io/profile[0m to get your token. [31m[1m│[0m
+[31m[1m└──────────────────────────────────────────────────────────────┘[0m
+	at io.cucumber.core.plugin.UrlOutputStream.createCurlLikeException(UrlOutputStream.java:150)
+	at io.cucumber.core.plugin.UrlOutputStream.getResponseBody(UrlOutputStream.java:135)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequest(UrlOutputStream.java:87)
+	at io.cucumber.core.plugin.UrlOutputStream.close(UrlOutputStream.java:65)
+	at java.base/sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:347)
+	at java.base/sun.nio.cs.StreamEncoder.close(StreamEncoder.java:169)
+	at java.base/java.io.OutputStreamWriter.close(OutputStreamWriter.java:254)
+	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:29)
+	... 31 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace584157293", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace584157293'><pre>java.lang.RuntimeException: java.io.IOException: HTTP request failed:
+&gt; GET https://messages.cucumber.io/api/reports
+&lt; HTTP/1.1 401 Unauthorized
+&lt; X-Cache: Error from cloudfront
+&lt; x-amz-apigw-id: FP7j8Hv8iGYF3GQ=
+&lt; Access-Control-Allow-Origin: https://reports.cucumber.io
+&lt; Access-Control-Allow-Methods: GET
+&lt; X-Amz-Cf-Pop: HYD57-P1
+&lt; Connection: keep-alive
+&lt; Date: Sun, 21 May 2023 01:24:53 GMT
+&lt; Access-Control-Allow-Headers: Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token
+&lt; X-Amzn-Trace-Id: Root=1-646972e5-09dd74ee10d3d1c953132fb0;Sampled=0;lineage=d7df4ace:0
+&lt; Via: 1.1 dea34d605fc32d028ad65cb7773b26be.cloudfront.net (CloudFront)
+&lt; Cache-Control: private, no-cache, no-store, must-revalidate
+&lt; Access-Control-Allow-Credentials: true
+&lt; x-amzn-RequestId: e1b7c688-b767-4d9b-8432-f7e7fa1e2824
+&lt; X-Amz-Cf-Id: axoxa9hRmb1EJTylQkMO2lMc_tEosOP_eRIMghU1uLU-pEyMpnAX-w==
+&lt; Content-Length: 627
+&lt; Content-Type: text/plain; charset=UTF-8
+[31m[1m┌──────────────────────────────────────────────────────────────┐[0m
+[31m[1m│[0m Invalid CUCUMBER_PUBLISH_TOKEN: [1msome-secret-token[0m            [31m[1m│[0m
+[31m[1m│[0m Go to [1m[36m[4mhttps://reports.cucumber.io/profile[0m to get your token. [31m[1m│[0m
+[31m[1m└──────────────────────────────────────────────────────────────┘[0m
+	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:32)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.SynchronizedEventBus.send(SynchronizedEventBus.java:47)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:125)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:105)
+	at io.cucumber.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:145)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:222)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:131)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.io.IOException: HTTP request failed:
+&gt; GET https://messages.cucumber.io/api/reports
+&lt; HTTP/1.1 401 Unauthorized
+&lt; X-Cache: Error from cloudfront
+&lt; x-amz-apigw-id: FP7j8Hv8iGYF3GQ=
+&lt; Access-Control-Allow-Origin: https://reports.cucumber.io
+&lt; Access-Control-Allow-Methods: GET
+&lt; X-Amz-Cf-Pop: HYD57-P1
+&lt; Connection: keep-alive
+&lt; Date: Sun, 21 May 2023 01:24:53 GMT
+&lt; Access-Control-Allow-Headers: Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token
+&lt; X-Amzn-Trace-Id: Root=1-646972e5-09dd74ee10d3d1c953132fb0;Sampled=0;lineage=d7df4ace:0
+&lt; Via: 1.1 dea34d605fc32d028ad65cb7773b26be.cloudfront.net (CloudFront)
+&lt; Cache-Control: private, no-cache, no-store, must-revalidate
+&lt; Access-Control-Allow-Credentials: true
+&lt; x-amzn-RequestId: e1b7c688-b767-4d9b-8432-f7e7fa1e2824
+&lt; X-Amz-Cf-Id: axoxa9hRmb1EJTylQkMO2lMc_tEosOP_eRIMghU1uLU-pEyMpnAX-w==
+&lt; Content-Length: 627
+&lt; Content-Type: text/plain; charset=UTF-8
+[31m[1m┌──────────────────────────────────────────────────────────────┐[0m
+[31m[1m│[0m Invalid CUCUMBER_PUBLISH_TOKEN: [1msome-secret-token[0m            [31m[1m│[0m
+[31m[1m│[0m Go to [1m[36m[4mhttps://reports.cucumber.io/profile[0m to get your token. [31m[1m│[0m
+[31m[1m└──────────────────────────────────────────────────────────────┘[0m
+	at io.cucumber.core.plugin.UrlOutputStream.createCurlLikeException(UrlOutputStream.java:150)
+	at io.cucumber.core.plugin.UrlOutputStream.getResponseBody(UrlOutputStream.java:135)
+	at io.cucumber.core.plugin.UrlOutputStream.sendRequest(UrlOutputStream.java:87)
+	at io.cucumber.core.plugin.UrlOutputStream.close(UrlOutputStream.java:65)
+	at java.base/sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:347)
+	at java.base/sun.nio.cs.StreamEncoder.close(StreamEncoder.java:169)
+	at java.base/java.io.OutputStreamWriter.close(OutputStreamWriter.java:254)
+	at io.cucumber.core.plugin.MessageFormatter.writeMessage(MessageFormatter.java:29)
+	... 31 more
+</pre></div></td>
+<td>1</td>
+<td>CucumberOptions.TestNgRunner@451001e5</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='CucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: CucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search Experiance with examples", "Search and place the order for products"</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=113.0.5672.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.9.1&apos;, revision: &apos;eb2032df7f&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ea7d7012b1abc431704d07b48983dcbc, getElementText {id=F17F10B7FC745CC07A14DCA90C24B4C8_element_38}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\svshr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50059}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50059/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (ea7d7012b1abc431704d07b48983dcbc)] -&gt; xpath: //h4[contains(@class,&apos;product-name&apos;)]]
+Session ID: ea7d7012b1abc431704d07b48983dcbc
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
+	at pageObjects.LandingPage.getProductText(LandingPage.java:29)
+	at stepDefinitions.LandingPageStepDefinition.user_search_with_shortname_and_extracted_actual_name_of_the_exp(LandingPageStepDefinition.java:39)
+	at ✽.user search with shortname Strawberry and extracted actual name of the exp(file:///D:/WorkSpaceSelenium/mcpcucumberFramework/src/test/java/features/searchProduct.feature:13)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1532904416", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1532904416'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=113.0.5672.126)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: &apos;4.9.1&apos;, revision: &apos;eb2032df7f&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ea7d7012b1abc431704d07b48983dcbc, getElementText {id=F17F10B7FC745CC07A14DCA90C24B4C8_element_38}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\svshr\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50059}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50059/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (ea7d7012b1abc431704d07b48983dcbc)] -&gt; xpath: //h4[contains(@class,&apos;product-name&apos;)]]
+Session ID: ea7d7012b1abc431704d07b48983dcbc
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
+	at pageObjects.LandingPage.getProductText(LandingPage.java:29)
+	at stepDefinitions.LandingPageStepDefinition.user_search_with_shortname_and_extracted_actual_name_of_the_exp(LandingPageStepDefinition.java:39)
+	at ✽.user search with shortname Strawberry and extracted actual name of the exp(file:///D:/WorkSpaceSelenium/mcpcucumberFramework/src/test/java/features/searchProduct.feature:13)
+</pre></div></td>
+<td>11</td>
+<td>CucumberOptions.TestNgRunner@451001e5</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='CucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: CucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search Experiance for product search in both home and offer page", "Search and place the order for products"</td>
+<td></td>
+<td>15</td>
+<td>CucumberOptions.TestNgRunner@451001e5</td></tr>
+<tr>
+<td title='CucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: CucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add Potato three kgs", "Add vegetables"</td>
+<td></td>
+<td>18</td>
+<td>CucumberOptions.TestNgRunner@451001e5</td></tr>
+<tr>
+<td title='CucumberOptions.TestNgRunner.runScenario()'><b>runScenario</b><br>Test class: CucumberOptions.TestNgRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search Experiance with examples", "Search and place the order for products"</td>
+<td></td>
+<td>15</td>
+<td>CucumberOptions.TestNgRunner@451001e5</td></tr>
+</table><p>
+</body>
+</html>
