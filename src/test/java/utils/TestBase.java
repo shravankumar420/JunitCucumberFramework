@@ -34,13 +34,13 @@ public class TestBase {
 			if(browser.equalsIgnoreCase("chrome")) {
 				WebDriverManager.chromedriver().setup();
 				ChromeOptions options=new ChromeOptions();
-				options.addArguments("--start-maximized","incognito","disable-infobars","disable-infobars");
+				options.addArguments("--start-maximized","incognito","disable-infobars","disable-infobars","--headless=new");
 			    driver =new ChromeDriver(options);
 			    }
 			else if(browser.equalsIgnoreCase("Edge")) {
 				WebDriverManager.edgedriver().setup();
 				EdgeOptions options= new EdgeOptions();
-				options.addArguments("--start-maximized","incognito","disable-infobars","disable-infobars");
+				options.addArguments("--start-maximized","incognito","disable-infobars","disable-infobars","--headless=new");
 			    driver =new EdgeDriver(options);			    
 			}
 			
